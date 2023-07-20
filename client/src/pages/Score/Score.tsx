@@ -1,21 +1,22 @@
 import { useEffect, useState } from 'react';
 import Container from '../../layout/Container';
 
-const Upcoming = () => {
+const Score = () => {
   const [authenticated, setAuthenticated] = useState('');
+
   useEffect(() => {
     const loggedInUser = localStorage.getItem('authenticated');
+
     if (loggedInUser === 'true') {
       setAuthenticated('true');
+      console.log(loggedInUser);
     }
   }, []);
-  if (!authenticated) {
-    <>Not login</>;
-  } else {
+  authenticated && (
     <Container>
-      <h1>Upcoming</h1>
-    </Container>;
-  }
+      <h1>Score</h1>
+    </Container>
+  );
 };
 
-export default Upcoming;
+export default Score;

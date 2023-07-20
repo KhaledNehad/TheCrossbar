@@ -1,11 +1,9 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
-import UpcomingMatchItem from './UpcomingMatchItem';
 
-import MatchData from './_matchData.json';
 interface TabPanelProps {
   children?: React.ReactNode;
   index: number;
@@ -41,7 +39,7 @@ function a11yProps(index: number) {
 
 export default function UpcomingMatches() {
   const [value, setValue] = useState(0);
-  const [data, setData] = useState([]);
+  // const [data, setData] = useState([]);
 
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue);
