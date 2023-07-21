@@ -1,21 +1,20 @@
-import { useState } from 'react';
-import Tabs from '@mui/material/Tabs';
-import Tab from '@mui/material/Tab';
-import Typography from '@mui/material/Typography';
-import Box from '@mui/material/Box';
-
+import Box from '@mui/material/Box'
+import Tab from '@mui/material/Tab'
+import Tabs from '@mui/material/Tabs'
+import Typography from '@mui/material/Typography'
+import { ReactNode, SyntheticEvent, useState } from 'react'
 interface TabPanelProps {
-  children?: React.ReactNode;
-  index: number;
-  value: number;
+  children?: ReactNode | ReactNode[]
+  index: number
+  value: number
 }
 
 function TabPanel(props: TabPanelProps) {
-  const { children, value, index, ...other } = props;
+  const { children, value, index, ...other } = props
 
   return (
     <div
-      role='tabpanel'
+      role="tabpanel"
       hidden={value !== index}
       id={`upcoming-${index}`}
       aria-labelledby={`upcoming-${index}`}
@@ -27,23 +26,23 @@ function TabPanel(props: TabPanelProps) {
         </Box>
       )}
     </div>
-  );
+  )
 }
 
 function a11yProps(index: number) {
   return {
     id: `simple-tab-${index}`,
     'aria-controls': `upcoming-${index}`,
-  };
+  }
 }
 
 export default function UpcomingMatches() {
-  const [value, setValue] = useState(0);
+  const [value, setValue] = useState(0)
   // const [data, setData] = useState([]);
 
-  const handleChange = (event: React.SyntheticEvent, newValue: number) => {
-    setValue(newValue);
-  };
+  const handleChange = (event: SyntheticEvent, newValue: number) => {
+    setValue(newValue)
+  }
 
   return (
     <Box sx={{ width: '100%' }}>
@@ -51,10 +50,10 @@ export default function UpcomingMatches() {
         <Tabs
           value={value}
           onChange={handleChange}
-          aria-label='basic tabs example'
+          aria-label="basic tabs example"
         >
-          <Tab label='Today' {...a11yProps(0)} />
-          <Tab label='Tomorrow' {...a11yProps(1)} />
+          <Tab label="Today" {...a11yProps(0)} />
+          <Tab label="Tomorrow" {...a11yProps(1)} />
         </Tabs>
       </Box>
       <TabPanel value={value} index={0}>
@@ -64,5 +63,5 @@ export default function UpcomingMatches() {
         Item Two
       </TabPanel>
     </Box>
-  );
+  )
 }

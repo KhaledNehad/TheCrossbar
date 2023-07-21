@@ -1,4 +1,13 @@
-import { Link } from 'react-router-dom';
+import {
+  Settings,
+  Home,
+  CalendarToday,
+  SportsSoccer,
+} from '@mui/icons-material'
+import { Link } from 'react-router-dom'
+
+import logo from './../../assets/images/logo.svg'
+import profileImage from './../../assets/images/profile2.jpeg'
 import {
   AppNavbar,
   AppLogo,
@@ -7,32 +16,22 @@ import {
   UserInfo,
   ProfileImage,
   AppSettingsBtn,
-} from './Navbar.styled';
-
-import {
-  Settings,
-  Home,
-  CalendarToday,
-  SportsSoccer,
-} from '@mui/icons-material';
-
-import logo from './../../assets/images/logo.svg';
-import profileImage from './../../assets/images/profile2.jpeg';
+} from './Navbar.styled'
 
 const Navbar = () => {
   return (
     <AppNavbar>
       <MainMenu>
-        <Link to='/'>
-          <AppLogo src={logo} alt='logo' />
+        <Link to="/">
+          <AppLogo src={logo} alt="logo" />
         </Link>
-        <StyledLink to='/'>
+        <StyledLink to="/">
           <Home />
         </StyledLink>
-        <StyledLink to='/upcoming'>
+        <StyledLink to="/upcoming">
           <CalendarToday />
         </StyledLink>
-        <StyledLink to='/score'>
+        <StyledLink to="/score">
           <SportsSoccer />
         </StyledLink>
       </MainMenu>
@@ -40,10 +39,10 @@ const Navbar = () => {
         <AppSettingsBtn>
           <Settings />
         </AppSettingsBtn>
-        <ProfileImage src={profileImage} alt='profile' />
+        <ProfileImage src={profileImage} alt="profile" />
       </UserInfo>
     </AppNavbar>
-  );
-};
+  )
+}
 
-export default Navbar;
+export default Navbar

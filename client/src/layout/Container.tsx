@@ -1,9 +1,10 @@
+import { ReactNode } from 'react'
 interface ContainerProps {
-  children: JSX.Element | JSX.Element[];
+  children: ReactNode | ReactNode[]
 }
 
 const Container = ({ children }: ContainerProps) => {
-  return <div className='mainContainer'>{children}</div>;
-};
+  return <div className="mainContainer">{children}</div>
+}
 
-export default Container;
+export default Container

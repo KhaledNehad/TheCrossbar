@@ -1,21 +1,22 @@
-import { useEffect, useState } from 'react';
-import Container from '../../layout/Container';
+import { useEffect, useState } from 'react'
+
+import Container from '../../layout/Container'
 
 const Upcoming = () => {
-  const [authenticated, setAuthenticated] = useState('');
+  const [authenticated, setAuthenticated] = useState('')
   useEffect(() => {
-    const loggedInUser = localStorage.getItem('authenticated');
+    const loggedInUser = localStorage.getItem('authenticated')
     if (loggedInUser === 'true') {
-      setAuthenticated('true');
+      setAuthenticated('true')
     }
-  }, []);
+  }, [])
   if (!authenticated) {
-    <>Not login</>;
+    ;<>Not login</>
   } else {
-    <Container>
+    ;<Container>
       <h1>Upcoming</h1>
-    </Container>;
+    </Container>
   }
-};
+}
 
-export default Upcoming;
+export default Upcoming

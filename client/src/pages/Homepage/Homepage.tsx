@@ -1,5 +1,5 @@
-import Featured from '../../components/Featured/Featured';
-import Container from '../../layout/Container';
+import Featured from '../../components/Featured/Featured'
+import Container from '../../layout/Container'
 
 const Homepage = () => {
   return (
@@ -7,7 +7,7 @@ const Homepage = () => {
       <h1>Homepage</h1>
       <Featured />
     </Container>
-  );
-};
+  )
+}
 
-export default Homepage;
+export default Homepage

@@ -1,17 +1,17 @@
-import { Typography } from '@mui/material';
+import { Typography } from '@mui/material'
 
 interface UpcomingMatchItemProps {
-  homeTeamName: string;
+  homeTeamName: string
 }
 
 const UpcomingMatchItem = (props: UpcomingMatchItemProps) => {
-  const { homeTeamName } = props;
+  const { homeTeamName } = props
 
   return (
-    <Typography variant='body2' component={'span'}>
+    <Typography variant="body2" component={'span'}>
       {homeTeamName}
     </Typography>
-  );
-};
+  )
+}
 
-export default UpcomingMatchItem;
+export default UpcomingMatchItem

@@ -1,6 +1,7 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import GlobalStyle from './GlobalStyle';
-import AllRoutes from './helper/AllRoutes';
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+
+import GlobalStyle from './GlobalStyle'
+import AllRoutes from './helper/AllRoutes'
 
 function App() {
   return (
@@ -8,11 +9,11 @@ function App() {
       <GlobalStyle />
       <BrowserRouter>
         <Routes>
-          <Route path='*' element={<AllRoutes />} />
+          <Route path="*" element={<AllRoutes />} />
         </Routes>
       </BrowserRouter>
     </>
-  );
+  )
 }
 
-export default App;
+export default App
