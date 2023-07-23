@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "rm -rf build/ && tsc",
     "start:dev": "nodemon --exec ts-node src/app.ts",
     "lint": "eslint . --ext .ts && prettier --check \"**/*.ts\"",
     "lint-fix": "eslint . --ext .ts --fix && prettier --write \"**/*.ts\""
@@ -13,7 +14,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@types/mongoose": "^5.11.97",
+    "bcrypt": "^5.1.0",
     "config": "^3.3.9",
     "dayjs": "^1.11.9",
     "dotenv": "^16.3.1",
@@ -21,13 +22,20 @@
     "mongoose": "^7.4.0",
     "pino": "^8.14.1",
     "pino-pretty": "^10.0.1",
-    "typescript": "^5.1.6"
+    "prom-client": "^14.2.0",
+    "response-time": "^2.3.2",
+    "typescript": "^5.1.6",
+    "zod": "^3.21.4"
   },
   "devDependencies": {
+    "@types/bcrypt": "^5.0.0",
     "@types/config": "^3.3.0",
     "@types/express": "^4.17.17",
+    "@types/mongoose": "^5.11.97",
     "@types/node": "^20.4.2",
+    "@types/response-time": "^2.3.5",
     "@typescript-eslint/eslint-plugin": "^6.1.0",
+    "curl": "^0.1.4",
     "eslint": "^8.45.0",
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-prettier": "^5.0.0",

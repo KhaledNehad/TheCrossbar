@@ -1,16 +1,18 @@
-import express from 'express'
-import dotenv from 'dotenv'
-import config from 'config'
-import logger from './utils/logger'
-import connect from './utils/connect'
+import express, { Request, Response } from 'express';
+import logger from './utils/logger';
+import connect from './utils/connect';
+import { config } from './config/default';
+import { createServer } from 'http';
 
-dotenv.config()
+import { startServer } from './utils/startServer';
 
-const app = express()
-const port = process.env.PORT || config.get<number>('port')
-const env = process.env.NODE_ENV || config.get<string>('env')
+const app = express();
 
-app.listen(port, async () => {
-  logger.info(`Server started on port ${port} in ${env} mode`)
-  await connect()
-})
+const port = config.server.port;
+const env = config.server.env;
+
+createServer(app).listen(port, async () => {
+  await connect();
+  startServer(app);
+  logger.info(`Server running at http://localhost:${port} in ${env} mode`);
+});
