@@ -2,10 +2,11 @@ import { Request, Response, NextFunction } from 'express';
 import mongoose from 'mongoose';
 import User from '../models/User.model';
 import logger from '../utils/logger';
+import { userValidator } from '../middleware/userValidator';
 
 const createUser = (req: Request, res: Response, next: NextFunction) => {
   if (!req.body || !req.body.username || !req.body.password || !req.body.email) {
-    return res.status(400).json({ message: 'Missing required fields' });
+    return res.status(400).json({ message: 'Missing required fields ' });
   }
 
   const { username, password, email } = req.body;
@@ -20,13 +21,19 @@ const createUser = (req: Request, res: Response, next: NextFunction) => {
     updatedAt: new Date()
   });
 
-  return user
-    .save()
-    .then((user) => res.status(201).json(user))
-    .catch((error) => {
-      logger.error(error);
-      res.status(500).json({ error });
-    });
+  try {
+    userValidator.parse(user);
+    return user
+      .save()
+      .then((user) => res.status(201).json(user))
+      .catch((error) => {
+        logger.error(error);
+        res.status(500).json({ error });
+      });
+  } catch (error) {
+    logger.error(error);
+    return res.status(400).json({ error });
+  }
 };
 
 // Single user
