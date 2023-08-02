@@ -2,6 +2,7 @@ import express, { Request, Response, NextFunction, Express } from 'express';
 import logger from './logger';
 import routes from './routes';
 import userRouter from '../routes/User.routes';
+import postRouter from '../routes/Post.routes';
 
 export const startServer = (app: Express) => {
   app.use((req: Request, res: Response, next: NextFunction) => {
@@ -31,6 +32,7 @@ export const startServer = (app: Express) => {
   routes(app);
 
   app.use('/api/users', userRouter);
+  app.use('/api/posts', postRouter);
 
   app.use((req, res, next) => {
     const error = new Error('Not found');
