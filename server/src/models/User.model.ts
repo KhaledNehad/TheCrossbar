@@ -1,16 +1,6 @@
-import mongoose, { Document, Schema } from 'mongoose';
+import mongoose, { Schema } from 'mongoose';
 
-export type IUser = {
-  username: string;
-  password: string;
-  email: string;
-  isAdmin?: boolean;
-  roles?: string[];
-  createdAt?: Date;
-  updatedAt?: Date;
-};
-
-export interface IUserModel extends IUser, Document {}
+type TUserModel = mongoose.InferSchemaType<typeof UserSchema>;
 
 const UserSchema: Schema = new Schema(
   {
@@ -42,4 +32,4 @@ const UserSchema: Schema = new Schema(
   }
 );
 
-export default mongoose.model<IUserModel>('User', UserSchema);
+export default mongoose.model<TUserModel>('User', UserSchema);
