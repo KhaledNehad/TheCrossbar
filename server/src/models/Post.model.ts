@@ -1,6 +1,6 @@
 import mongoose, { Schema, Document } from 'mongoose';
 
-export interface IPost {
+export type IPost = {
   title: string;
   content: string;
   image?: string;
@@ -9,7 +9,7 @@ export interface IPost {
   league?: string;
   createdAt?: Date;
   updatedAt?: Date;
-}
+};
 
 export interface IPostModel extends IPost, Document {}
 

@@ -2,7 +2,6 @@ import { Request, Response, NextFunction } from 'express';
 import mongoose from 'mongoose';
 import User from '../models/User.model';
 import logger from '../utils/logger';
-import { userValidator } from '../middleware/userValidator';
 
 const createUser = (req: Request, res: Response, next: NextFunction) => {
   if (!req.body || !req.body.username || !req.body.password || !req.body.email) {
@@ -22,7 +21,6 @@ const createUser = (req: Request, res: Response, next: NextFunction) => {
   });
 
   try {
-    userValidator.parse(user);
     return user
       .save()
       .then((user) => res.status(201).json(user))
