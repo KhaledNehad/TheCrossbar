@@ -1,17 +1,6 @@
-import mongoose, { Schema, Document } from 'mongoose';
+import mongoose, { Schema } from 'mongoose';
 
-export type IPost = {
-  title: string;
-  content: string;
-  image?: string;
-  author?: string;
-  likes?: number;
-  league?: string;
-  createdAt?: Date;
-  updatedAt?: Date;
-};
-
-export interface IPostModel extends IPost, Document {}
+type TPostModel = mongoose.InferSchemaType<typeof PostSchema>;
 
 const PostSchema = new Schema(
   {
@@ -29,4 +18,4 @@ const PostSchema = new Schema(
   }
 );
 
-export default mongoose.model<IPostModel>('Post', PostSchema);
+export default mongoose.model<TPostModel>('Post', PostSchema);
