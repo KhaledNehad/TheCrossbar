@@ -1,22 +1,9 @@
-import {
-  Settings,
-  Home,
-  CalendarToday,
-  SportsSoccer,
-} from '@mui/icons-material'
-import { Link } from 'react-router-dom'
+import { Settings, Home, CalendarToday, SportsSoccer } from '@mui/icons-material';
+import { Link } from 'react-router-dom';
 
-import logo from './../../assets/images/logo.svg'
-import profileImage from './../../assets/images/profile2.jpeg'
-import {
-  AppNavbar,
-  AppLogo,
-  MainMenu,
-  StyledLink,
-  UserInfo,
-  ProfileImage,
-  AppSettingsBtn,
-} from './Navbar.styled'
+import logo from './../../assets/images/logo.svg';
+import profileImage from './../../assets/images/profile2.jpeg';
+import { AppNavbar, AppLogo, MainMenu, StyledLink, UserInfo, ProfileImage, AppSettingsBtn } from './Navbar.styled';
 
 const Navbar = () => {
   return (
@@ -42,7 +29,7 @@ const Navbar = () => {
         <ProfileImage src={profileImage} alt="profile" />
       </UserInfo>
     </AppNavbar>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;
