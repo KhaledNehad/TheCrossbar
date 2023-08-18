@@ -4,19 +4,15 @@
     "es2021": true,
     "node": true
   },
-  "plugins": [
-    "@typescript-eslint",
-    "react",
-    "react-hooks",
-    "prettier",
-    "eslint-plugin-import-helpers"
-  ],
+  "plugins": ["@typescript-eslint", "react", "react-hooks", "prettier", "eslint-plugin-import-helpers"],
   "extends": [
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:react/recommended",
     "plugin:react-hooks/recommended",
-    "plugin:prettier/recommended"
+    "plugin:prettier/recommended",
+    "plugin:react/jsx-runtime",
+    "prettier"
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
@@ -31,7 +27,7 @@
     "quotes": ["error", "single"],
     "no-console": "warn",
     "no-unused-vars": "warn",
-    "no-undef": "error",
+    "no-undef": "off",
     "semi": "off",
     "react/jsx-uses-react": "off",
     "react/react-in-jsx-scope": "off",
