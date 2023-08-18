@@ -1,11 +1,13 @@
 import Container from '../Container/Container';
 
-const Main: React.FC = () => {
+interface MainProps {
+  children: React.ReactNode;
+}
+
+const Main: React.FunctionComponent<MainProps> = ({ children }) => {
   return (
-    <main className="flex-grow">
-      <Container>
-        <h1>Main Container</h1>
-      </Container>
+    <main className="grow">
+      <Container>{children}</Container>
     </main>
   );
 };

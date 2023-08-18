@@ -7,9 +7,9 @@ interface LayoutProps {
 
 const Layout: React.FunctionComponent<LayoutProps> = ({ sidebar, mainContent, rightSidebar, footer }) => {
   return (
-    <div className="flex min-h-screen flex-col">
-      <div className="flex-grow">
-        <div className="flex flex-col md:flex-row">
+    <div className="flex  flex-col">
+      <div className="grow">
+        <div className="flex min-h-screen flex-col bg-gradient-to-t from-appBlue-200 to-appBlue-100 md:flex-row">
           {sidebar}
           {mainContent}
           {rightSidebar}
