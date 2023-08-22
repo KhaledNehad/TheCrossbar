@@ -24,7 +24,7 @@ const Nav: React.FC = () => {
         <Link to="/" className="text-appBlue-400">
           <AiOutlineSearch />
         </Link>
-        <Link to="/" className="text-appBlue-400">
+        <Link to="/login" className="text-appBlue-400">
           <AiFillSetting />
         </Link>
         <div className="rounded-full bg-gray-200">
