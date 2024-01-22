@@ -1,5 +1,5 @@
-import { NavLink } from 'react-router-dom'
-import styled from 'styled-components'
+import { NavLink } from 'react-router-dom';
+import styled from 'styled-components';
 
 export const AppNavbar = styled.nav`
   display: flex;
@@ -10,13 +10,13 @@ export const AppNavbar = styled.nav`
   width: 100%;
   background: #fff;
   box-shadow: 2px 0 10px #d7e5f6;
-`
+`;
 export const AppLogo = styled.img`
   width: 50px;
   height: 50px;
   margin-bottom: 1rem;
   margin-top: 1rem;
-`
+`;
 export const MainMenu = styled.div`
   display: flex;
   flex-direction: column;
@@ -24,7 +24,7 @@ export const MainMenu = styled.div`
   align-content: center;
   margin-bottom: 1rem;
   font-size: 0.7rem;
-`
+`;
 export const StyledLink = styled(NavLink)`
   border-radius: 50%;
   border: 1px solid #c1d2f8;
@@ -43,7 +43,7 @@ export const StyledLink = styled(NavLink)`
     background-image: linear-gradient(to right, #5843be, #497de4);
     color: #fff;
   }
-`
+`;
 
 export const UserInfo = styled.div`
   display: flex;
@@ -53,12 +53,12 @@ export const UserInfo = styled.div`
   margin-bottom: 1rem;
   border-top: 1px solid #c1d2f8;
   padding-top: 1.5rem;
-`
+`;
 export const ProfileImage = styled.img`
   width: 50px;
   height: 50px;
   border-radius: 50%;
-`
+`;
 export const AppSettingsBtn = styled.a`
   margin-bottom: 1rem;
-`
+`;

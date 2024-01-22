@@ -1,9 +1,9 @@
-import AppContainer from '../layout/AppContainer';
+import { MainAppLayout } from '../layout';
 
 const AllRoutes = () => {
   return (
     <section>
-      <AppContainer />
+      <MainAppLayout />
     </section>
   );
 };
