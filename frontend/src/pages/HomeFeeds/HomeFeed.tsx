@@ -1,4 +1,5 @@
 import Featured from '../../components/Featured/Featured';
+import News from '../../components/News/News';
 import { Match } from '../../types/matchTypes';
 
 const featuredMatchData: Match = {
@@ -58,6 +59,7 @@ const HomeFeed = () => {
   return (
     <>
       <Featured match={featuredMatchData} />
+      <News />
     </>
   );
 };
